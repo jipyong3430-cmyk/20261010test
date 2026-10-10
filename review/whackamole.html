@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d9f28a">
+  <title>뿅뿅! 두더지 잡기</title>
+  <link rel="stylesheet" href="whackamole.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="뿅뿅 두더지 잡기 홈">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>두더지 연구소</span>
+      </a>
+      <span class="round-tag"><span class="live-dot"></span> ARCADE 01</span>
+    </header>
+
+    <section class="game-layout" aria-labelledby="game-title">
+      <div class="game-copy">
+        <p class="eyebrow">준비, 조준, 뿅!</p>
+        <h1 id="game-title">뿅뿅!<br><span>두더지 잡기</span></h1>
+        <p class="intro">구멍에서 빼꼼 나온 두더지를<br>재빨리 톡톡 눌러 보세요.</p>
+        <div class="how-to" aria-hidden="true"><span class="how-to-icon">↘</span><span>두더지를 누르면 한 방!</span></div>
+      </div>
+
+      <section class="arcade" aria-label="두더지 잡기 게임">
+        <div class="scoreboard">
+          <div class="stat">
+            <span class="stat-label">점수</span>
+            <strong id="score" aria-live="polite">000</strong>
+          </div>
+          <div class="stat timer-stat">
+            <span class="stat-label">남은 시간</span>
+            <strong><span id="time">30</span><small>초</small></strong>
+          </div>
+          <div class="stat best-stat">
+            <span class="stat-label">최고 기록</span>
+            <strong id="best-score">000</strong>
+          </div>
+        </div>
+
+        <div class="board-wrap">
+          <div class="board" id="board" aria-label="두더지 게임판">
+            <button class="hole" type="button" aria-label="첫 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="두 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="세 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="네 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="다섯 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="여섯 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="일곱 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="여덟 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+            <button class="hole" type="button" aria-label="아홉 번째 구멍, 두더지 없음"><span class="mole" aria-hidden="true"><span class="ear ear-left"></span><span class="ear ear-right"></span><span class="face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="tooth"></i></span></span><span class="hit-mark" aria-hidden="true">퍽!</span><span class="hole-shadow"></span></button>
+          </div>
+          <div class="board-rim" aria-hidden="true"></div>
+        </div>
+
+        <div class="game-controls">
+          <p id="message" role="status" aria-live="polite">두더지가 나타나길 기다려요!</p>
+          <button class="start-button" id="start-button" type="button"><span aria-hidden="true">▶</span> 게임 시작</button>
+        </div>
+      </section>
+    </section>
+    <footer class="footer"><span>손가락 준비!</span><span>30초 동안 최대한 많이 잡아 보세요</span></footer>
+  </main>
+</body>
+</html>
